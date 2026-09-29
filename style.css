@@ -1,0 +1,155 @@
+/* =========================================
+   1. RESET & BASE STYLES
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* padding and border included in element width */
+}
+
+:root {
+  --primary: #1e3a8a;   /* dark blue */
+  --accent: #f97316;    /* orange */
+  --light: #f3f4f6;     /* light gray */
+  --text: #1f2937;      /* dark gray */
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--light);
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION
+   ========================================= */
+.site-header {
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 30px 20px 0 20px;   /* box model: top right bottom left */
+  text-align: center;
+}
+
+
+.tagline {
+  margin: 8px 0 20px 0;
+  color: #dbeafe;
+}
+
+/* Flexbox is also used here to lay out the nav links */
+.site-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
+}
+
+.site-nav a {
+  display: block;
+  padding: 12px 20px;
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+}
+
+
+
+/* =========================================
+   3. MAIN CONTENT & SECTIONS
+   ========================================= */
+main {
+  max-width: 900px;
+  margin: 30px auto;           /* centers the main content */
+  padding: 0 20px;
+}
+
+main section {
+  background-color: #ffffff;
+  padding: 25px;
+  margin-bottom: 25px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+h2 {
+  color: var(--primary);
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 3px solid var(--accent);
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+a {
+  color: var(--primary);
+}
+
+/* =========================================
+   4. INTRO SECTION (image + text, Flexbox)
+   ========================================= */
+.intro {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+
+.profile-pic {
+  width: 100px;
+  height: 150px;
+  border-radius: 50%;              /* makes it a circle */
+  border: 4px solid var(--accent); /* orange ring */
+  object-fit: cover;               /* crops the photo instead of stretching it */
+  object-position: center;     /* keeps his face in view */
+  flex-shrink: 0;                  /* stops Flexbox from squishing it */
+}
+
+
+/* =========================================
+   5. HOBBIES SECTION (Flexbox card layout)
+   ========================================= */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;        /* cards move to next line on small screens */
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 200px;        /* grow, shrink, base width */
+  padding: 20px;
+  background-color: var(--light);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+}
+
+.card h3 {
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+/* =========================================
+   6. FOOTER
+   ========================================= */
+.site-footer {
+  background-color: var(--primary);
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* =========================================
+   7. RESPONSIVE (small screens)
+   ========================================= */
+@media (max-width: 600px) {
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .site-nav ul {
+    flex-wrap: wrap;
+  }
+}
